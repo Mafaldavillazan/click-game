@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "America",
+    "image": "https://www.spainculture.us/site/assets/files/6661/spanish_art_in_america.-grande.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Miro",
+    "image": "https://www.spainculture.us/site/assets/files/5842/v-modern_spanish_art.-grande.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Picasso",
+    "image": "http://homeandlifestyle.es/wp-content/uploads/2018/11/museopicasso2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Goya",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg/300px-El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg"
+  }
+]

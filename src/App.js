@@ -1,6 +1,6 @@
 import React from "react";
 
-import Component from "./components/BootstrapBasic.js"
+import Component from "./components/RenderPage"
 
 function App() {
   return <Component/>;

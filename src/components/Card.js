@@ -1,27 +1,31 @@
 import React from "react";
+import imagesData from "../paints.json";
+import ImageCard from "./ImageCard";
+import Wrapper from "./Wrapper";
 
-function Card() {
-    return (
-        <div className="card mb-4">
-            <div className="card-header">
-                <h3>Card title</h3>
-            </div>
-            <div className="card-body">
-                < Random/>
-            </div>
-        </div>
-    );
-}
+
 
 //Creating a class that changes from something to random
-class Random extends React.Component {
+class CardDisplay extends React.Component {
     state = {
-        count: 0
+        imagesData
     };
-    selectRandom = () => {
-        // We always use the setState method to update a component's state
-        this.setState({ count: Math.floor((Math.random() * 10) + 1) });  
-    };
+    // selectRandom = () => {
+    //     // We always use the setState method to update a component's state
+    //     this.setState({ count: Math.floor((Math.random() * 10) + 1) });  
+    // };
+    render() {
+        return (
+          <Wrapper>
+            {this.state.imagesData.map(results => (
+              <ImageCard
+                {...results}
+                />
+            ))}
+          </Wrapper>
+        );
+      }
+
 }
 
-export default Card;
+export default CardDisplay;
