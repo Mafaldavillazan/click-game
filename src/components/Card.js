@@ -20,27 +20,8 @@ class Random extends React.Component {
     };
     selectRandom = () => {
         // We always use the setState method to update a component's state
-        this.setState({ count: Math.floor((Math.random() * 10) + 1) });
-        
+        this.setState({ count: Math.floor((Math.random() * 10) + 1) });  
     };
-
-
-    // The render method returns the JSX that should be rendered
-    render() {
-        return (
-            <div className="card text-center">
-                <div className="card-header bg-primary text-white">
-                    Click Counter!
-                </div>
-                <div className="card-body">
-                    <p className="card-text">Click Count: {this.state.count}</p>
-                    <button className="btn btn-primary" onClick={this.selectRandom}>
-                        Increment
-                    </button>
-                </div>
-            </div>
-        );
-    }
 }
 
 export default Card;
