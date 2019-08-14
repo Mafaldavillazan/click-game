@@ -16,7 +16,6 @@ class CardDisplay extends React.Component {
         selectedValues: []
     };
 
-
     checkClick = id => {
         let arr = this.state.selectedValues
 
@@ -24,27 +23,22 @@ class CardDisplay extends React.Component {
         //Why is not getting though the for loop
 
         if (!arr.length) {
-            this.setState({ arr: arr.push(id) });
+            this.setState({ arr: this.state.selectedValues.push(id) });
             this.setState({ count: this.state.count + 1 });
         }
         else {
-            for (let i = 0; i < arr.length; i++) {
-            
-                if (id !== arr[i]) {
-                    console.log("Not there")
-                    console.log(this.state.count)
-                    this.setState({ count: this.state.count + 1 });
-                    this.setState({ arr: this.state.selectedValues.push(id) });
-                }
-                else {
-                    console.log("Click two times")
-                    console.log(this.state.count)
-                    this.setState({ count: this.state.count * 0 });
-                    this.setState({ arr: [] });
-                }
+            const state = this.state
+            if (arr.includes(id)) {
+                this.setState({ arr: [] });
+                this.setState({ count: state.count - state.count });
+
             }
-
-
+            else {
+                console.log("Click two times")
+                this.setState({ count: state.count + 1 });
+                this.setState({ arr: state.selectedValues.push(id) });
+            }
+            console.log("Arr after clicking:" + arr)
         }
     };
 
