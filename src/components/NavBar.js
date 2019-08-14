@@ -1,6 +1,6 @@
 import React from "react";
 
-function NavBar() {
+function NavBar(props) {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="/">The ultimate clicking game</a>
@@ -10,7 +10,7 @@ function NavBar() {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link">Score: </a>
+                        <a className="nav-link">Score: {props.score}</a>
                     </li>
                     <li className="nav-item active">
                         <a className="nav-link">Top Score: </a>
