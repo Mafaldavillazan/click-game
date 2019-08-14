@@ -10,14 +10,26 @@ import Jumbotron from "./Jumbotron.js";
 class CardDisplay extends React.Component {
     state = {
         imagesData,
-        count: 0
+        count: 0,
+        selectedValues: []
     };
 
 
-    addScore = () => {
-        this.setState({ count: this.state.count + 1 });
-        //How can I call the element outside to change it
-        console.log(this.state.count)
+    checkClick = id => {
+        let arr = this.state.selectedValues
+        //Why is not getting though the for loop
+        for (let i = 0; i < arr.length; i++) {
+            console.log(id)
+            console.log(arr)
+            if (id !== arr[i]) {
+                this.setState({ count: this.state.count + 1 });
+                this.setState({ selectedValues: this.state.selectedValues.push(id) })
+            }
+            else {
+                this.setState({ count: this.state.count * 0 });
+                this.setState({ selectedValues: this.state.selectedValues.empty() })
+            }
+        }
     };
 
     render() {
@@ -28,9 +40,8 @@ class CardDisplay extends React.Component {
                 <Wrapper>
                     {this.state.imagesData.map(results => (
                         <ImageCard
+                            checkClick={this.checkClick}
                             {...results}
-                            key={results.id}
-                            onClick={this.addScore}
                         />
                     ))}
                 </Wrapper>

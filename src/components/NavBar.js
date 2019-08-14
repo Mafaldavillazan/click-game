@@ -10,10 +10,10 @@ function NavBar(props) {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link">Score: {props.score}</a>
+                        <a className="nav-link" href="/">Score: {props.score}</a>
                     </li>
                     <li className="nav-item active">
-                        <a className="nav-link">Top Score: </a>
+                        <a className="nav-link" href="/">Top Score: </a>
                     </li>
                 </ul>
             </div>
