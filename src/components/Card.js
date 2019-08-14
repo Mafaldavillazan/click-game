@@ -27,10 +27,13 @@ class CardDisplay extends React.Component {
         else {
             const state = this.state
             if (arr.includes(id)) {
-                this.setState({ arr: [] });
+                this.setState({ selectedValues: [] });
+                console.log("State" + state.selectedValues)
+                console.log("Arr" + arr)
                 this.setState({ count: state.count - state.count });
-                this.setState({ winningCount: state.count})
-
+                if (state.count > state.winningCount) {
+                    this.setState({ winningCount: state.count })
+                }
             }
             else {
                 this.setState({ count: state.count + 1 });
