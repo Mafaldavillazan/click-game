@@ -13,14 +13,12 @@ class CardDisplay extends React.Component {
     state = {
         imagesData,
         count: 0,
+        winningCount: 0,
         selectedValues: []
     };
 
     checkClick = id => {
         let arr = this.state.selectedValues
-
-
-        //Why is not getting though the for loop
 
         if (!arr.length) {
             this.setState({ arr: this.state.selectedValues.push(id) });
@@ -31,14 +29,13 @@ class CardDisplay extends React.Component {
             if (arr.includes(id)) {
                 this.setState({ arr: [] });
                 this.setState({ count: state.count - state.count });
+                this.setState({ winningCount: state.count})
 
             }
             else {
-                console.log("Click two times")
                 this.setState({ count: state.count + 1 });
                 this.setState({ arr: state.selectedValues.push(id) });
             }
-            console.log("Arr after clicking:" + arr)
         }
     };
 
@@ -58,7 +55,7 @@ class CardDisplay extends React.Component {
     render() {
         return (
             <div>
-                <NavBar score={this.state.count} />
+                <NavBar score={this.state.count} winningScore={this.state.winningCount} />
                 <Jumbotron />
                 <Wrapper>
                     {this.state.imagesData.map(results => (
