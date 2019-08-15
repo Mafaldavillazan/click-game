@@ -28,32 +28,30 @@ class CardDisplay extends React.Component {
             const state = this.state
             if (arr.includes(id)) {
                 this.setState({ selectedValues: [] });
-                console.log("State" + state.selectedValues)
-                console.log("Arr" + arr)
                 this.setState({ count: state.count - state.count });
                 if (state.count > state.winningCount) {
                     this.setState({ winningCount: state.count })
                 }
             }
             else {
+              
                 this.setState({ count: state.count + 1 });
                 this.setState({ arr: state.selectedValues.push(id) });
+    
             }
         }
     };
 
-    // shuffleImages = imagesData => {
-    //     let i = imagesData.length - 1
-    //     while (i > 0) {
-    //         //Get random number and change its position
-    //         const a = Math.floor(Math.random()* (i+1));
-    //         let randomSituation = imagesData[i];
-    //         imagesData[i]= imagesData[a];
-    //         randomSituation
-    //         i--
-    //     }
-    //     return imagesData
-    // }
+    shuffleImages = imagesData => {
+        let i = imagesData.length - 1;
+        for (; i < 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const temp = imagesData[i];
+            imagesData[i] = imagesData[j];
+            imagesData[j] = temp;
+        }
+        return this.setState({ imagesData: imagesData});
+    }
 
     render() {
         return (
