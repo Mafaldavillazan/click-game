@@ -12,9 +12,15 @@ function NavBar(props) {
                     <li className="nav-item active">
                         <a className="nav-link" href="/">Score: {props.score}</a>
                     </li>
+
                     <li className="nav-item active">
                         <a className="nav-link" href="/">Top Score: {props.winningScore}</a>
                     </li>
+
+                    <li className="nav-item active">
+                        <p className="nav-link" href="/">{props.message}</p>
+                    </li>
+
                 </ul>
             </div>
         </nav>
