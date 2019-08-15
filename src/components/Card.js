@@ -26,6 +26,7 @@ class CardDisplay extends React.Component {
             this.setState({ arr: this.state.selectedValues.push(id) });
             this.setState({ count: this.state.count + 1 });
             this.shuffleImages(imagesData)
+            this.setState({ message: "" })
         }
         else {
             const state = this.state
@@ -35,6 +36,7 @@ class CardDisplay extends React.Component {
                 if (state.count > state.winningCount) {
                     this.setState({ winningCount: state.count })
                 }
+                this.shuffleImages(imagesData)
                 this.setState({ message: "YOU LOOSE" })
                 
             }
@@ -42,7 +44,7 @@ class CardDisplay extends React.Component {
 
                 this.setState({ count: state.count + 1 });
                 this.setState({ arr: state.selectedValues.push(id) });
-
+                this.shuffleImages(imagesData)
             }
         }
     };
